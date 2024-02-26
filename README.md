@@ -1,4 +1,11 @@
+[![Built With Love](https://img.shields.io/badge/built%20with-<3-790d14.svg?style=flat&logo=)](https://hautarzt-trcka.netlify.app/)
+[![Netlify Deploy Status](https://api.netlify.com/api/v1/badges/9f3a1a30-d857-4643-83b8-37cab37045bc/deploy-status)](https://app.netlify.com/sites/hautarzt-trcka/deploys)
+
+# Hautarzt Trcka Website
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## [Visit here](https://hautarzt-trcka.netlify.app/)
 
 ## Getting Started
 
@@ -29,8 +36,6 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy on Netlify
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Any Commit on the `main` branch will trigger a build & deploy on netlify. For all pull requests opened to the main branch there will be generated a preview link, that is automatically added to 
