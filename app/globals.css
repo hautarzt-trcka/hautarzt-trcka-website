@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: #000;
+  --background-start-rgb: #b9d8fb;
+  --background-end-rgb: #fff;
 }
 
 body {
@@ -22,4 +22,22 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/*
+Tailwind removes the default font size and weight for headings so it has to be reverted manually.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: revert;
+  font-weight: revert;
+}
+
+hr {
+  margin: 1rem 0;
 }
