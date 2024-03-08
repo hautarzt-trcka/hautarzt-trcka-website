@@ -9,12 +9,18 @@ interface FadeInYProps {
 
 export default function FadeInY({ children, delay = 0 }: FadeInYProps) {
   return (
-    <motion.span
+    <motion.div
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay }}
+      transition={{ 
+        duration: 0.5, 
+        delay,
+        type: "spring",
+        stiffness: 260,
+        damping: 20
+      }}
     >
       {children}
-    </motion.span>
+    </motion.div>
   );
 }
