@@ -154,7 +154,7 @@ i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f5350355359%3A0x1262982f48271d15!2sDr.%20med
         </Card>
       </div>
 
-      <div className="relative flex flex-col items-center justify-center space-y-2 sm:text-lg md:text-xl lg:text-2xl font-bold z-10 pb-20">
+      <div className="relative flex flex-col items-center justify-center text-lg sm:text-lg md:text-xl lg:text-2xl font-bold z-10 pb-28">
         <FadeInY delay={0.2}>
           WIR FREUEN UNS AUF <span className="text-gradient bg-gradient-to-tr from-blue-400 to-blue-700">IHREN BESUCH</span>
         </FadeInY>
