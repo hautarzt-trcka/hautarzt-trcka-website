@@ -1,8 +1,10 @@
-import type {Metadata} from "next";
-import {Inter} from "next/font/google";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import {NextUIProvider} from "@/lib/nextui";
+import { NextUIProvider } from "@/lib/nextui";
 import AppNavbar from "@/components/navbar";
+import { motion } from 'framer-motion';
+import FadeInY from "@/components/fadeInY";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +22,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <NextUIProvider>
           <AppNavbar></AppNavbar>
-          <main>
-            {children}
-          </main>
+          <FadeInY>
+            <main>
+              {children}
+            </main>
+          </FadeInY>
         </NextUIProvider>
       </body>
     </html>

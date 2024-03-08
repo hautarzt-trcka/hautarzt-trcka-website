@@ -10,13 +10,32 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      backgroundImage: theme => ({
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-radial-to-tr': 'radial-gradient(circle farthest-corner at top right, var(--tw-gradient-stops))',
+      }),
+      textColor: {
+        'gradient': 'transparent',
       },
     },
   },
-  plugins: [nextui()],
+  variants: {
+    extend: {
+      scale: ['focus'],
+    },
+  },
+  plugins: [
+    nextui(),
+    require('@tailwindcss/typography'),
+    function ({ addUtilities }: { addUtilities: Function }) {
+      const newUtilities = {
+        '.text-gradient': {
+          'background-clip': 'text',
+          'text-fill-color': 'transparent',
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 };
 export default config;
