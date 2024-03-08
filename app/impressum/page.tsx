@@ -3,15 +3,20 @@ import { Link } from "@nextui-org/link";
 export default function Impressum() {
   return (
     <div className="p-3">
+      <h1>Impressum</h1>
       <div>Dr. med. Jiri Trcka</div>
       <div>Hautarztpraxis</div>
       <div>Bahnhofstr. 2</div>
       <div>92318 Neumarkt</div>
+
+      <h2>Kontakt</h2>
       <div>Tel. Praxis: <Link href="tel:09181-4878-0">09181-4878-0</Link></div>
       <div>Fax. Praxis: <Link href="tel:09181-4878-13">09181-4878-13</Link></div>
+
       <hr />
-      <h3>Haftungsausschluss (Disclaimer)</h3>
-      <h4 className="mt-2 mb-1">Haftung für Inhalte</h4>
+
+      <h2>Haftungsausschluss (Disclaimer)</h2>
+      <h3>Haftung für Inhalte</h3>
       <p>Als Diensteanbieter sind wir gemäß § 7
         Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8
         bis
@@ -24,7 +29,7 @@ export default function Impressum() {
         konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir
         diese
         Inhalte umgehend entfernen.</p>
-      <h4 className="mt-2 mb-1">Haftung für Links</h4>
+      <h3>Haftung für Links</h3>
       <p>Unser Angebot enthält Links zu externen Webseiten
         Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch
         keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder
@@ -34,7 +39,7 @@ export default function Impressum() {
         permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer
         Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links
         umgehend entfernen.</p>
-      <h4 className="mt-2 mb-1">Urheberrecht</h4>
+      <h3>Urheberrecht</h3>
       <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
         diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und
         jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung
@@ -47,6 +52,11 @@ export default function Impressum() {
         Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen
         entsprechenden
         Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+
+      <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
+      <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+      <p className="mt-5">Quelle: <Link href="https://www.e-recht24.de">https://www.e-recht24.de</Link></p>
     </div>
   );
 }
