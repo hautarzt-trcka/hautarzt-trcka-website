@@ -9,6 +9,10 @@ import FadeInY from "@/components/fadeInY";
 
 export default function Home() {
   const googleMapsLink = 'https://maps.app.goo.gl/zWBaw1sbewTeFTn18';
+  const googleMapsEmbeddedLink = `https://www.google.com/maps/embed?
+pb=!1m18!1m12!1m3!1d650.7469964183489!2d11.459047269661136!3d49.27662487315907!2m3!1f0!2f0!3f0!3m2!1
+i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f5350355359%3A0x1262982f48271d15!2sDr.%20med.%20Jiri%20Trcka!5e0
+!3m2!1sen!2sde!4v1709804919215!5m2!1sen!2sde`;
 
   const currentDate = new Date();
 
@@ -61,7 +65,10 @@ export default function Home() {
             </div>
             <div className="flex justify-center align-center flex-1">
               <a href="tel:09181-48780">
-                <Button className="bg-gradient-to-tr from-blue-400 to-blue-700 text-white shadow-lg transform transition-transform duration-200 hover:-translate-y-1 focus:-translate-y-1" color="default" radius="full"
+                <Button 
+                  className="bg-gradient-to-tr from-blue-400 to-blue-700 text-white shadow-lg transform transition-transform duration-200 hover:-translate-y-1 focus:-translate-y-1" 
+                  color="default" 
+                  radius="full"
                   endContent={<Phone size={18} color="white" />}>
                   09181-48780
                 </Button>
@@ -104,7 +111,10 @@ export default function Home() {
             </div>
             <div className="flex justify-center align-center flex-1">
               <a href="tel:09181-48780">
-                <Button className="bg-gradient-to-tr from-blue-400 to-blue-700 text-white shadow-lg transform transition-transform duration-200 hover:-translate-y-1 focus:-translate-y-1" color="default" radius="full"
+                <Button 
+                  className="bg-gradient-to-tr from-blue-400 to-blue-700 text-white shadow-lg transform transition-transform duration-200 hover:-translate-y-1 focus:-translate-y-1" 
+                  color="default" 
+                  radius="full"
                   endContent={<Phone size={18} color="white" />}>
                   09181-48780
                 </Button>
@@ -119,7 +129,7 @@ export default function Home() {
         >
           <CardBody>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d650.7469964183489!2d11.459047269661136!3d49.27662487315907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f5350355359%3A0x1262982f48271d15!2sDr.%20med.%20Jiri%20Trcka!5e0!3m2!1sen!2sde!4v1709804919215!5m2!1sen!2sde"
+              src={googleMapsEmbeddedLink}
               className="w-full h-full border-none rounded-lg focus-visible:outline-none"
               allowFullScreen={false}
               loading="lazy"

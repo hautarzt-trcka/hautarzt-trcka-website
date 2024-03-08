@@ -36,6 +36,7 @@ h5,
 h6 {
   font-size: revert;
   font-weight: revert;
+  margin: revert;
 }
 
 hr {
