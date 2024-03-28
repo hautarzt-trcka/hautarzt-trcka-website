@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import React from "react";
 
 interface FadeInYProps {
   children: React.ReactNode;
@@ -12,8 +13,8 @@ export default function FadeInY({ children, delay = 0 }: FadeInYProps) {
     <motion.div
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ 
-        duration: 0.5, 
+      transition={{
+        duration: 0.5,
         delay,
         type: "spring",
         stiffness: 260,
