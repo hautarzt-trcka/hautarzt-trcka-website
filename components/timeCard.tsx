@@ -31,13 +31,12 @@ export default function TimeCard({path, footerTop, footerBottom, ariaLabel}: Tim
 
   useEffect(() => {
     setIsLoading(true);
-    fetch('https://raw.githubusercontent.com/hautarzt-trcka/hautarzt-trcka-data/master/' + path)
+    fetch('https://raw.githubusercontent.com/hautarzt-trcka/hautarzt-trcka-data/master/' + path,
+      {cache: 'no-cache'})
       .then(response => response.json())
       .then(data => {
-        setTimeout(() => {
-          setDayTimes(data);
-          setIsLoading(false);
-        }, 3000); // delay of 3 seconds
+        setDayTimes(data);
+        setIsLoading(false);
       });
   }, [path]);
 
@@ -60,7 +59,7 @@ export default function TimeCard({path, footerTop, footerBottom, ariaLabel}: Tim
           </TableHeader>
           <TableBody>
             {!dayTimes || dayTimes.length == 0 ? (
-              Array.from({ length: 5 }).map((_: unknown, index: number) => (
+              Array.from({length: 5}).map((_: unknown, index: number) => (
                 <TableRow key={index}>
                   <TableCell>
                     <Skeleton className="w-full rounded-lg">
