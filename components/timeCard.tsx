@@ -2,9 +2,10 @@
 
 import {Card, CardBody, CardFooter} from "@nextui-org/card";
 import {Table, TableBody, TableCell, TableColumn, TableHeader, TableRow} from "@nextui-org/table";
-import {DayTime, sprechstunden} from "@/public/sprechstunden";
 import {Button} from "@nextui-org/button";
+import {Skeleton} from "@nextui-org/skeleton";
 import {Phone} from "react-feather";
+import {useEffect, useState} from "react";
 
 function getCurrentDate(): Date {
   const currentDate = new Date();
@@ -12,14 +13,34 @@ function getCurrentDate(): Date {
   return currentDate;
 }
 
+interface DayTime {
+  weekday: string;
+  times: string[];
+}
+
 interface TimeCardProps {
-  dayTimes: Array<DayTime>;
+  path: string;
   footerTop: string;
   footerBottom: string;
   ariaLabel: string;
 }
 
-export default function TimeCard({ dayTimes, footerTop, footerBottom, ariaLabel }: TimeCardProps) {
+export default function TimeCard({path, footerTop, footerBottom, ariaLabel}: TimeCardProps) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [dayTimes, setDayTimes] = useState<DayTime[]>([]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch('https://raw.githubusercontent.com/hautarzt-trcka/hautarzt-trcka-data/master/' + path)
+      .then(response => response.json())
+      .then(data => {
+        setTimeout(() => {
+          setDayTimes(data);
+          setIsLoading(false);
+        }, 3000); // delay of 3 seconds
+      });
+  }, [path]);
+
   return (
     <Card
       className="border-none flex-1 basis-[350px]"
@@ -38,20 +59,41 @@ export default function TimeCard({ dayTimes, footerTop, footerBottom, ariaLabel 
             <TableColumn>ZEITEN</TableColumn>
           </TableHeader>
           <TableBody>
-            {dayTimes.map((row, index) =>
-              <TableRow key={index}>
-                <TableCell>{row.weekday}</TableCell>
-                <TableCell><div className="flex flex-col">{row.times.map((time, index) => <span key={index}>{time}</span>)}</div></TableCell>
-              </TableRow>
+            {!dayTimes || dayTimes.length == 0 ? (
+              Array.from({ length: 5 }).map((_: unknown, index: number) => (
+                <TableRow key={index}>
+                  <TableCell>
+                    <Skeleton className="w-full rounded-lg">
+                      <div className="h-5 w-full rounded-lg bg-default-200"></div>
+                    </Skeleton>
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton className="w-full rounded-lg">
+                      <div className="h-5 w-full rounded-lg bg-default-200"></div>
+                    </Skeleton>
+                  </TableCell>
+                </TableRow>
+              ))
+            ) : (
+              dayTimes.map((row, index) =>
+                <TableRow key={index}>
+                  <TableCell>{row.weekday}</TableCell>
+                  <TableCell>
+                    <div className="flex flex-col">
+                      {row.times.map((time, index) => <span key={index}>{time}</span>)}
+                    </div>
+                  </TableCell>
+                </TableRow>
+              )
             )}
           </TableBody>
         </Table>
       </CardBody>
-      <hr className="mx-2 my-0" />
+      <hr className="mx-2 my-0"/>
       <CardFooter className="flex flex-wrap justify-center gap-4">
         <div className="flex flex-col justify-center align-center">
-          <p className="text-black/80 text-center whitespace-nowrap">{ footerTop }</p>
-          <p className="text-black/80 text-center whitespace-nowrap">{ footerBottom }</p>
+          <p className="text-black/80 text-center whitespace-nowrap">{footerTop}</p>
+          <p className="text-black/80 text-center whitespace-nowrap">{footerBottom}</p>
         </div>
         <div className="flex justify-center align-center">
           <a href="tel:09181-48780">

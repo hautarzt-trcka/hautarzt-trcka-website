@@ -2,9 +2,7 @@
 
 import {Card, CardBody, CardFooter} from "@nextui-org/card";
 import {Button} from "@nextui-org/button";
-import {MapPin, Phone, Mail} from "react-feather";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/table";
-import {sprechstunden, terminvereinbarungen} from "@/public/sprechstunden";
+import {MapPin} from "react-feather";
 import FadeInY from "@/components/fadeInY";
 import TimeCard from "@/components/timeCard";
 
@@ -31,8 +29,8 @@ i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f5350355359%3A0x1262982f48271d15!2sDr.%20med
 
       <div className="flex flex-row flex-wrap justify-center align-center gap-4">
 
-        <TimeCard dayTimes={sprechstunden} footerTop="Sprechstunden" footerBottom="vereinbaren" ariaLabel="Sprechstunden"/>
-        <TimeCard dayTimes={terminvereinbarungen} footerTop="Termin" footerBottom="vereinbaren" ariaLabel="Terminvereinbarungen"/>
+        <TimeCard path="sprechstunden.json" footerTop="Sprechstunden" footerBottom="vereinbaren" ariaLabel="Sprechstunden"/>
+        <TimeCard path="terminvereinbarungen.json" footerTop="Termin" footerBottom="vereinbaren" ariaLabel="Terminvereinbarungen"/>
 
         <Card
           className="border-none flex-1 basis-[300px] min-h-[350px]"
