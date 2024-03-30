@@ -7,7 +7,9 @@ import {Button} from "@nextui-org/button";
 import {Phone} from "react-feather";
 
 function getCurrentDate(): Date {
-  return new Date();
+  const currentDate = new Date();
+  console.log(currentDate);
+  return currentDate;
 }
 
 interface TimeCardProps {
