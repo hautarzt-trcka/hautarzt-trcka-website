@@ -36,7 +36,7 @@ i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f5350355359%3A0x1262982f48271d15!2sDr.%20med
           className="border-none flex-1 basis-[300px] min-h-[350px]"
           radius="lg"
         >
-          <CardBody>
+          <CardBody className="flex-1">
             <iframe
               src={googleMapsEmbeddedLink}
               className="w-full h-full border-none rounded-lg focus-visible:outline-none"
