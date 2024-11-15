@@ -7,12 +7,6 @@ import {Skeleton} from "@nextui-org/skeleton";
 import {Phone} from "react-feather";
 import {useEffect, useState} from "react";
 
-function getCurrentDate(): Date {
-  const currentDate = new Date();
-  console.log(currentDate);
-  return currentDate;
-}
-
 interface DayTime {
   weekday: string;
   times: string[];
@@ -51,7 +45,7 @@ export default function TimeCard({path, footerTop, footerBottom, ariaLabel}: Tim
           removeWrapper
           color="primary"
           selectionMode="single"
-          defaultSelectedKeys={[(getCurrentDate().getDay() - 1).toString()]}
+          defaultSelectedKeys="0"
           aria-label={ariaLabel}>
           <TableHeader>
             <TableColumn>WOCHENTAG</TableColumn>
